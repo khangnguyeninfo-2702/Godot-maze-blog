@@ -1,0 +1,6 @@
+title: My first game development blog
+description: My journey about creating my first game using godot game engine
+author: Nguyen Nhat Khang
+theme: minima 
+plugins:
+  - jekyll-feed
