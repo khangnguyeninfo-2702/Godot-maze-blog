@@ -1,0 +1,63 @@
+---
+layout: post
+title: "My second blog post, implementing menus and backgrounds"
+date: 2025-11-06 17:22:00
+categories: [godot, programming, new]
+---
+
+The 8th day:
+---
+2025-11-04
+- I added the main menu buttons today now that my 2D game's basic stuffs are done.
+- I went online and fine some free pixel art UIs and found one [from this site](https://craftpix.net/freebies/free-basic-pixel-art-ui-for-rpg/)
+- I also created space like background where squares and triangles float around and bounce against each other.
+- Finally, I added a score screen and I made it so that player can ascend to next levels of the mazes where the maze progressively bigger.
+---
+What I learn:
+- First, I learn how to use 'TextureButton' nodes.
+- Then I learn about the containers, like 'CenterContainer', 'VBoxContainer' or 'HBoxContainer' which are just to contains buttons in a specific order and layout.
+- I also learn how to crop the sprite and divide them into suitable buttons' images in different states like hovering, pressed.
+- Some physics with the background is also necessary, so I had to relearn some basic physics like air resistance and collisions.
+---
+First problem encountered:
+- The spritesheet I downloaded didn't have a button like "start" or "play" that I needed for the main menu, this is when I use paint to separate the letters and just stick them onto different already existing blank buttons.
+Second Problem encountered:
+- Locating the buttons/game titles in the place I wanted them to be.
+- Containers can help with the layout but they also limits my buttons' size when I first use them. 
+- Also, I couldn't locate my buttons around the screen freely, I can only locate the whole container which is in another container and so everything moves uniformly which wasn't what I needed.
+- In order to solve the button's size problem, I messed around with the godot's documentation and found out that I can actually change my button's size using the mode "scale" and adjust the mimimum x, mimimum y, components of the button for it to scale accordingly.
+- And in order to solve the buttons' location problem, I created multiple containers containing containers and then I could actually move them around the way I wanted to. This results in a more complex structure of containers and buttons also but it's manageable.
+Third problem encountered:
+- When implementing the background, the shapes wasn't spawning randomly on the screen, instead they get packed in a corner at (0, 0) coordinate.
+- To fix this, I used call deferred and set the block's position **before** adding them as a child of the background and then the blocks started spawning at random positions just like intended.
+---
+The 9th day:
+---
+2025-11-05
+- On this date, I modified the landmine's abilities so that they can also damage and potentially destroy walls.
+- Additionally, I also added a dashing ability to the player when "shift" is pressed and added some knockback if the player actually dashes into a wall heads on.
+What I learn:
+- Using components like  health components to add into the walls and make the wall "die" after taking a certain amount of damage.
+- How to get directions and calculate if the collision was a head-on collision instead of contacting side by side.
+---
+First problem encountered:
+- Determining what is a heads on collision.
+- When I first added the dashing ability, even if the player contacts a wall by their side which is not the direction player is moving in, the player will still get some knockback from that.
+- In order to solve this, having known the direction of the player's movements from previous functions. so if the collision is heads on then the collider direction with the movement direction product will be 1.
+- So with a bit of math, I managed to solve this problem 😎
+The 10th day:
+---
+2025-11-06
+- This is today, the day I'm writing this blog. I am currently trying to make a skill indicator when the player can use their skill and when they cannot.
+- It is getting a bit into the animation and art realm now so I'm starting to learn about drawing pixel arts and stuffs related to that like color theory.
+What I learn:
+- How to use the TextureProgressBar.
+- Basics of drawing in pixel art.
+---
+First problem encountered:
+- Drawing in pixel art with no draw pad. All I have is a mouse.
+- There is no specific way to solve this problem for me. I guess I just gotta keep trying and get better through watching some basic tutorials and experiment stuffs.
+Second problem encountered:
+- Understanding how the TextureProgressBar works.
+- I couldn't get the progressbar to works like a clock rotating clockwise to indicate that the skill is in cooldown.
+- Turns out all I needed to do was just to looke into the mode of the bar and changes its 'fill_mode' to ClockWise to make it becomes what I wanted 😢
