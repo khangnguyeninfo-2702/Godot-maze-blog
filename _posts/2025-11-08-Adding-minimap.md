@@ -10,6 +10,10 @@ On 2025/11/08, I decided that my screen was looking a little bit plain and my ma
 ---
 What I learned:
 - How to use viewport/line nodes to create a cool border.
+Here is an image of how it turns out, pretty simple looking but I sure do ahve some trouble figuring out how to properly make it 😅
+<p align="center">
+<img src="/assets/images/Add_minimap.jpg" alt="An image of a simple minimap in the top right corner of the game" width="800" />
+</p>
 ---
 First problem encounter:
 - Getting the border to surround the minimap view
