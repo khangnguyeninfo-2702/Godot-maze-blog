@@ -12,7 +12,7 @@ Here is what my game looks like as of today, the player on the minimap has a lit
 </p>
 What I learned:
 - Using shaders to create glow.
-- Using WorldEnvironment to create glow.
+- Using WorldEnvironment to create glow
 - How to use a subviewport to support a minimap view.
 - Spawning in player and enemies sprites on minimap and make them follow the real coordinate of the visual in the main game.
 
