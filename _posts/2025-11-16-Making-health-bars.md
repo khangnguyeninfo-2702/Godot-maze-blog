@@ -18,7 +18,7 @@ I was dead wrong. What I expected to be a simple one-hour task turned into a ful
 Here is the result of the struggle. The health bars now correctly follow the player and enemies, **maintain proper visual offsets** even when the character's size changes, and **change color** dynamically based on the health remaining.
 
 <p align="center">
-<img src="{{ site.baseurl }}/assets/images/Add_health_bars.png"" alt="player and enemies with health bars" width="800" />
+<img src="{{ site.baseurl }}/assets/images/Add_health_bars.png" alt="player and enemies with health bars" width="800" />
 </p>
 
 ---
