@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "#6th devlog: The Hidden Agony of Health Bars (and How I Solved It)"
+title: "Devlog #6: The Hidden Agony of Health Bars (and How I Solved It)"
 date: 2025-11-16 09:24:00
 categories: [godot, programming, devblog, ui]
 ---
