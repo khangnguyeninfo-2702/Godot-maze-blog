@@ -1,0 +1,96 @@
+---
+layout: post
+title: "Devlog #11: Silver Fragments & Divine Shields – When Physics Gets Personal"
+date: 2025-12-05 11:24:00
+categories: [godot, programming, devblog]
+tags: [Global-UIs, game-mechanics]
+---
+
+Welcome back to another devlog! 🚀  
+This week’s adventure? A deep dive into **UI magic, scene shenanigans**, and a surprising amount of **floating triangles causing chaos**.
+
+---
+
+## 🎛️ A Quest for Seamless Settings
+
+So, here’s the problem I wanted to solve:
+
+I’ve built a bunch of menus—main menu, shop, settings, pause menu—you name it. But I wanted the *settings menu* to be accessible directly from the pause menu **without restarting the entire game** when leaving it.
+
+Godot, however, went:  
+> “Oh, you want to open another scene while paused? How about I... restart everything instead?”
+
+Not ideal.
+
+### 💡 The Big Brain Solution: Global UIs
+
+After watching some other devs’ clever approaches, I realized:  
+**Why not just spawn the settings menu at startup, disable it, and toggle it on/off whenever I need it?**
+
+Brilliant!  
+…in theory.
+
+---
+
+## 🧩 Problem #1: “Why Can’t I Click Anything?”
+
+Everything was loaded. Everything was visible. And yet—no clicks.  
+The settings menu simply refused to acknowledge my existence.
+
+Why?
+
+- The settings menu was on a CanvasLayer.
+- It instantiated at game startup.
+- Which meant: **it lived *under* the pause menu.**
+- Even with `process_mode = ALWAYS`, it still lost the click war.
+
+### ☑️ Fix:
+I bumped its CanvasLayer to Layer **2**.  
+Suddenly—clicks everywhere. Victory.
+
+---
+
+## 🌀 Problem #2: Duplicate Physics Backgrounds = Disaster
+
+Every menu in my game has:
+- Its own UI background
+- And a physics-based background with floating squares and triangles (because static menus are boring!)
+
+But when the settings menu spawned globally:
+- I could hide the UI…
+- But the physics background refused to stop moving or despawn.
+
+Result?  
+**Two entire physics backgrounds existing at once.**  
+Floating shapes colliding with other floating shapes.  
+Full-on polygon mayhem.
+
+I’ve seen this nightmare before—and escaped it.  
+But this time?
+
+### ☑️ Fix:
+I promoted the physics background to its own global UI too.  
+One background to rule them all. 😎
+
+---
+
+## 🧠 What I Learned
+
+- How to create and manage **global UIs**  
+- How to cleanly **enable/disable UI scenes** without spaghetti  
+- How to maintain a **smooth and consistent menu system** across the whole game
+
+Plus, I finally solved my ancient problem of having *two separate settings menus* (one in the main menu, one in-game). Now I have **one unified, smarter settings menu**. No more scene resets. No more duplication. No more pain.
+
+---
+
+## 🔮 Next Steps
+
+Now that the UI architecture is polished and future-proof:
+
+- 🎇 Time to dive into **fragment mechanics**!  
+- 🌍 And soon… start crafting the **3D world**. (I hope. Pray for me.)
+
+Thanks for following along—more exciting chaos coming soon!  
+See you in Devlog #11!
+
