@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Devlog #10: Silver Fragments & Divine Shields - When Physics Gets Personal"
-date: 2025-11-28 11:24:00
+date: 2025-12-03 11:24:00
 categories: [godot, programming, devblog]
 tags: [fragments, abilities, game-mechanics, shaders]
 ---
