@@ -148,5 +148,3 @@ This week reinforced the importance of thinking about optimization early, even b
 ---
 
 *Thanks for reading! Stay tuned for the next devlog where I'll dive into the 2D/3D world-breaking mechanic.*
-
-**Previous:** [Devlog #7](#) | **Next:** [Devlog #9](#)
